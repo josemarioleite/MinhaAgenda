@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using SQLite;
-using MinhaAgenda.Model;
-using Xamarin.Forms;
-using MinhaAgenda.Interface;
 using System.Linq;
+using System.Text;
+using MinhaAgenda.Interface;
+using MinhaAgenda.Model;
+using SQLite;
+using Xamarin.Forms;
 
 namespace MinhaAgenda.Banco
 {
-    class AcessoBanco
+   
+    public class BancoDB
     {
         private SQLiteConnection _conexao;
-
-        public AcessoBanco()
+        
+        public BancoDB()
         {
             var dep = DependencyService.Get<ICaminho>();
-            string caminho = dep.ObterCaminho("AcessoBanco.sqlite");
+            string caminho = dep.ObterCaminho("database.sqlite");
 
             _conexao = new SQLiteConnection(caminho);
             _conexao.CreateTable<Vagas>();
@@ -24,17 +25,17 @@ namespace MinhaAgenda.Banco
 
         public List<Vagas> Consultar()
         {
-            return _conexao.Table<Vagas>().ToList();
+          return  _conexao.Table<Vagas>().ToList();
         }
 
         public List<Vagas> Pesquisar(string palavra)
         {
-          return  _conexao.Table<Vagas>().Where(a=>a.NomeVaga.Contains(palavra)).ToList();
+            return _conexao.Table<Vagas>().Where(a=>a.NomeVaga.Contains(palavra)).ToList();
         }
 
-        public Vagas ObterVagasPorId(int id)
+        public Vagas ObterVagasPorId (int id)
         {
-            return _conexao.Table<Vagas>().Where(a=>a.Id == id).FirstOrDefault();         
+            return _conexao.Table<Vagas>().Where(a=>a.Id == id).FirstOrDefault() ;
         }
 
         public void Cadastro(Vagas vagas)
@@ -51,7 +52,5 @@ namespace MinhaAgenda.Banco
         {
             _conexao.Delete(vagas);
         }
-
-        public
     }
 }

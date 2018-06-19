@@ -16,7 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Banco\AcessoBanco.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Banco\BancoDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interface\ICaminho.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -26,24 +26,27 @@
       <DependentUpon>CadastroVagas.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Paginas\ConsultaVagas.xaml.cs">
-      <DependentUpon>ConsultaVagas.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Paginas\ConsultarVagas.xaml.cs">
+      <DependentUpon>ConsultarVagas.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Paginas\DetalheVagas.xaml.cs">
       <DependentUpon>DetalheVagas.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Paginas\EditarPagina.xaml.cs">
+      <DependentUpon>EditarPagina.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Paginas\MasterDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Paginas\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Paginas\MinhasVagasCadastradas.xaml.cs">
       <DependentUpon>MinhasVagasCadastradas.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\ConsultaVagas.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\CadastroVagas.xaml">
@@ -59,6 +62,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\DetalheVagas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\ConsultarVagas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\EditarPagina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Paginas\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

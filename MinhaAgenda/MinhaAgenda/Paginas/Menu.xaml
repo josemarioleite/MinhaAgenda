@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhaAgenda.Paginas.Menu" Title="Menu">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout HeightRequest="120" BackgroundColor="#2196f3">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Minha Agenda" TextColor="White" 
+                           FontSize="Large"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="10">
+                
+                <StackLayout>
+                    <Button Text="Adicionar" Clicked="VagasCadastro" BackgroundColor="#2196f3" TextColor="White"/>
+                </StackLayout>
+                <StackLayout/>
+                <StackLayout/>
+                <StackLayout>
+                    <Button Text="Editar Evento" Clicked="TodasMinhasVagas" BackgroundColor="#2196f3" TextColor="White"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

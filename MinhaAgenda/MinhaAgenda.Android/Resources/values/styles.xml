@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <resources>
 
   <style name="MainTheme" parent="MainTheme.Base">
   </style>
+
+
+
   <!-- Base theme applied no matter what API -->
   <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
     <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
@@ -25,6 +29,6 @@
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">#FF69B4</item>
   </style>
 </resources>

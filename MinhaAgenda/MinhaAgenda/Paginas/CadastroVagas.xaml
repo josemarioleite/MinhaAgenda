@@ -1,27 +1,58 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MinhaAgenda.Paginas.CadastroVagas">
-  <ContentView.Content>
-      <StackLayout>
-            <Entry Placeholder="Vagas" />
-            <Entry Placeholder="Empresa" />
-            <Entry Placeholder="Quantidade" />
-            <Entry Placeholder="Cidade" />
-            <Entry Placeholder="Salário" />
-            <Label Text="Descrição do Cargo" />
-            <Editor HeightRequest="200"/>
+             x:Class="MinhaAgenda.Paginas.CadastroVagas" >
+  <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="5">
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Entry x:Name="NomeVagaCad" Placeholder="Título"      PlaceholderColor="LightSlateGray" />
+                    <Entry x:Name="LocalCad"  Placeholder="Local"    PlaceholderColor="LightSlateGray"/>
+                </StackLayout>
+
+                <DatePicker x:Name="DataCad"></DatePicker>
+                <TimePicker x:Name="HorasCad" Time="{Binding Horas}">
+                    
+                </TimePicker>
+
+                    <!--<StackLayout>
+                    <TimePicker x:Name="HorasCad">
+                        <TimePicker.Time>HH/mm</TimePicker.Time>
+                    </TimePicker>
+                </StackLayout>-->
+
+                <StackLayout>
+                    <Label Text="Descrição do Evento" TextColor="#2196f3" 
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalOptions="CenterAndExpand"/>
+                    <Entry x:Name="DescCad" HeightRequest="50" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Padding="4">
                     <Label Text="Tipo de Contratação" />
-                    <Label Text="CLT" />
-                    <Switch/>
-                    <Label Text="PJ" />
-            </StackLayout>
-            <Entry Placeholder="Telefone" />
-            <Entry Placeholder="E-Mail" />
+                    <Label Text="Dia" />
+                    <Switch x:Name="TipoDia"/>
+                    <Label Text="Noite" />
+                </StackLayout>
 
-            <Button Text="Salvar" />
-     </StackLayout>
-  </ContentView.Content>
-</ContentView>
+
+                <StackLayout>
+                    <Entry x:Name="TelefoneCad" Placeholder="Telefone" PlaceholderColor="LightSlateGray"/>
+                </StackLayout>
+
+
+                <StackLayout>
+                    <Entry x:Name="EMAILCad" Placeholder="E-Mail" PlaceholderColor="LightSlateGray"/>
+                </StackLayout>
+
+
+                <StackLayout Padding="10">
+                    <Button Text="Salvar" Clicked="SalvarAction" BackgroundColor="#2196f3" TextColor="Black"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

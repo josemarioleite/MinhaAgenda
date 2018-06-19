@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhaAgenda.Paginas.ConsultarVagas" 
+             Title="Minha Agenda">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" BackgroundColor="#F5FFFA">
+
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Compromissos marcados:" FontSize="15" />
+                        <Label Text=""  x:Name="lblCount" HorizontalOptions="End" VerticalOptions="End" TextColor="#000000"/>
+                    </StackLayout>
+                    <Entry Placeholder="Pesquisar" TextChanged="PesquisarAction" BackgroundColor="#F5FFFA"/>
+                </StackLayout>
+
+                <StackLayout Padding="4">
+                    <ListView x:Name="LISTVagas" HasUnevenRows="True" WidthRequest="100">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <ViewCell.View>
+                                    <Grid BackgroundColor="#E6E6FA">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="100" />
+                                            </Grid.ColumnDefinitions>
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                                <Label  Text="{Binding NomeVaga}" FontAttributes="Bold" TextColor="#2196f3"
+                                                                              FontSize="17" />
+                                                <StackLayout></StackLayout>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Label  Text="{Binding Data}"  TextColor="#00008B" />
+                                                </StackLayout>
+
+                                                <StackLayout>
+                                                    <Label Text="{Binding HorasCad}" TextColor="#00008B" />
+                                                </StackLayout>
+                                                
+                                            </StackLayout>
+
+                                            <Label  Text="+ Detalhes" Grid.Column="1" HorizontalOptions="Center" 
+                                                                                     VerticalOptions="Center"
+                                                                                     TextColor="Blue">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="MaisDetalhesAction" CommandParameter="{Binding .}" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhaAgenda.Paginas.EditarPagina">
+    
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+
+                <StackLayout>
+                    <Entry x:Name="NomeCadas"     Placeholder="Vagas"      PlaceholderColor="#2196f3" />
+                    <Entry x:Name="LocalCad"      Placeholder="Local"      PlaceholderColor="#2196f3"/>
+                </StackLayout>
+                <DatePicker x:Name="DataCad"></DatePicker>
+
+                <StackLayout>
+                    <Label Text="Descrição da Vaga" TextColor="#2196f3" 
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalOptions="CenterAndExpand"/>
+                    <Entry x:Name="DescriCad" HeightRequest="50" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Tipo de Contratação" />
+                    <Label Text="Dia" />
+                    <Switch x:Name="TipoDia"/>
+                    <Label Text="Noite" />
+                </StackLayout>
+                <Entry x:Name="TelefoneCadas" Placeholder="Telefone" PlaceholderColor="#2196f3"/>
+                <Entry x:Name="EMAILCadas" Placeholder="E-Mail" PlaceholderColor="#2196f3"/>
+
+                <StackLayout>
+                    <Button Text="Salvar" Clicked="SalvarAction" BackgroundColor="#2196f3"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
